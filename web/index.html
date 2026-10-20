@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <title>Mobile AI Studio</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">✦</div>
+  <div><strong>Mobile AI Studio</strong><small>Code · Create · Run</small></div>
+  <span class="offline-badge">LOCAL</span>
+</header>
+
+<main>
+  <section class="hero panel">
+    <div class="eyebrow">YOUR POCKET WORKSPACE</div>
+    <h1>Build something<br><span>brilliant.</span></h1>
+    <p>বাংলায় কথা বলো, কোড লেখো, আর HTML প্রিভিউ চালাও — API key ছাড়াই।</p>
+    <div class="hero-actions">
+      <button class="button primary" id="goEditor">Open Editor ↗</button>
+      <button class="button ghost" id="voiceButton">🎙 Voice</button>
+    </div>
+    <div class="assistant-line"><span class="pulse"></span><span id="assistantStatus">Assistant ready · No API key</span></div>
+  </section>
+
+  <section class="panel assistant-panel" id="assistantPanel">
+    <div class="section-heading"><div><span class="eyebrow">VOICE ASSISTANT</span><h2>Talk to Studio</h2></div><span class="icon-tile">◉</span></div>
+    <label class="sr-only" for="commandInput">Command</label>
+    <div class="command-row">
+      <input id="commandInput" placeholder="যেমন: YouTube খোলো…" autocomplete="off">
+      <button class="button primary" id="sendCommand">Send</button>
+    </div>
+    <p class="response" id="assistantResponse" aria-live="polite">হ্যালো! আমি তোমার লোকাল সহকারী। “গুগল খোলো” বা “এডিটর খোলো” বলো।</p>
+    <div class="quick-actions">
+      <button class="chip" data-url="https://www.google.com">Google ↗</button>
+      <button class="chip" data-url="https://m.youtube.com">YouTube ↗</button>
+      <button class="chip" data-url="https://www.facebook.com">Facebook ↗</button>
+    </div>
+  </section>
+
+  <section class="panel editor-panel" id="editorPanel">
+    <div class="section-heading"><div><span class="eyebrow">DEVELOPER TOOLS</span><h2>Code Studio</h2></div><span class="icon-tile">{ }</span></div>
+    <div class="toolbar">
+      <label class="sr-only" for="languageSelect">Language</label>
+      <select id="languageSelect">
+        <option value="html">HTML + CSS + JS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="css">CSS</option>
+      </select>
+      <span class="file-label" id="fileLabel">index.html</span>
+    </div>
+    <textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Code editor"></textarea>
+    <div class="editor-actions">
+      <button class="button success" id="runCode">▶ Run / Preview</button>
+      <button class="button ghost" id="saveFile">↓ Export</button>
+      <button class="button ghost" id="openFile">↑ Import</button>
+      <input type="file" id="fileInput" hidden accept=".html,.htm,.css,.js,.py,.java,.txt,.md">
+    </div>
+    <p class="hint" id="editorHint">HTML, CSS এবং JavaScript-এর জন্য browser preview।</p>
+  </section>
+
+  <section class="panel preview-panel" id="previewPanel">
+    <div class="section-heading"><div><span class="eyebrow">LIVE CANVAS</span><h2>Preview</h2></div><button class="chip" id="clearPreview">Clear</button></div>
+    <iframe id="previewFrame" title="Code preview" sandbox="allow-scripts"></iframe>
+    <p class="hint">Preview sandbox-এর মধ্যে চলে। অপরিচিত কোড চালানোর আগে পরীক্ষা করো।</p>
+  </section>
+
+  <section class="grid two">
+    <article class="mini-card"><span class="mini-icon">⌘</span><h3>Multi-language</h3><p>HTML, CSS, JS, Python ও Java ফাইল এডিট করো।</p></article>
+    <article class="mini-card"><span class="mini-icon">▣</span><h3>File tools</h3><p>ফাইল import/export করো। ফাইল অ্যাক্সেস ব্রাউজার permission-এর অধীন।</p></article>
+  </section>
+
+  <section class="notice">
+    <strong>Android / Runtime note</strong>
+    <p>এই starter-এ Python ও Java লেখা/সেভ করা যায়, কিন্তু ব্রাউজারের মধ্যে সরাসরি রান হয় না। সত্যিকারের APK, Python runtime এবং native mobile controls-এর জন্য Android project, build tools ও আলাদা runtime/API দরকার। কোনো permission bypass করা হয় না।</p>
+  </section>
+</main>
+
+<footer>Mobile AI Studio <span>·</span> Built for your phone</footer>
+<script src="/app.js"></script>
+</body>
+</html>
